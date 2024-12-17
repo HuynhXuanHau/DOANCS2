@@ -51,6 +51,7 @@ Route::get('/createCv', [ProfileController::class, 'createCV'])->name('createCV'
 Route::post('/profile/store', [ProfileController::class, 'storeProfile'])->name('storeProfile');
 Route::get('/admin/profile/{user_id}', [ProfileController::class, 'showProfileForAD'])->name('showProfileForAD');
 Route::get('/admin/profilebus/{id}', [ProfileController::class, 'showProfileBUSForAD'])->name('showProfileBUSForAD');
+Route::get('/business/profile/{user_id}', [ProfileController::class, 'showProfileForBus'])->name('showProfileForBus');
 
 // routes/web.php
 // Route
@@ -71,6 +72,7 @@ Route::get('/business/login', [BusinessController::class, 'showLoginForm'])->nam
 Route::post('/business/logout',  [BusinessController::class, 'logout'])->name('logout');
 Route::get('/business/home', [BusinessController::class, 'home'])->name('business.home');
 Route::post('/business/home', [BusinessController::class, 'homeBusiness'])->name('business.home.post');
+Route::get('/business/createJob', [BusinessController::class, 'createJobforBUS'])->name('createJobforBusiness');
 
 Route::get('/business/home/pending', [BusinessController::class, 'pendingList'])->name('business.home.pending');
 Route::get('/business/home/approved', [BusinessController::class, 'approvedList'])->name('business.home.approved');
@@ -86,6 +88,7 @@ Route::get('/business/create', [BusinessController::class, 'create'])->name('bus
 Route::post('/business/store', [BusinessController::class, 'store'])->name('business.store');
 Route::get('/home-business', [BusinessController::class, 'homeBusiness'])->name('homeBusiness');
 
+
 // Route::get('/business/view', [BusinessController::class,'view'])->name('business.view');
 
 
@@ -94,8 +97,8 @@ Route::post('/apply-job/approve', [ApplyJobController::class, 'approve'])->name(
 Route::post('/apply-job/reject', [ApplyJobController::class, 'reject'])->name('applyJob.reject');
 
 use App\Http\Controllers\ApplyBusinessController;
-Route::post('/apply-job/approve', [ApplyBusinessController::class, 'approve'])->name('applyBUS.approve');
-Route::post('/apply-job/reject', [ApplyBusinessController::class, 'reject'])->name('applyBUS.reject');
+Route::post('/apply-job/approvebus', [ApplyBusinessController::class, 'approve'])->name('applyBUS.approve');
+Route::post('/apply-job/rejectbus', [ApplyBusinessController::class, 'reject'])->name('applyBUS.reject');
 
 
 

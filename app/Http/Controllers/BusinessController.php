@@ -64,6 +64,10 @@ class BusinessController extends Controller
     {
         return view('auth.register_business');
     }
+    public function createJobforBUS()
+    {
+        return view('business.createJobForm');
+    }
     public function home(Request $request)
     {
 
@@ -272,7 +276,7 @@ public function updateCv(Request $request)
             // Chuyển hướng về trang admin và thông báo thành công
             
            
-        return redirect()->route('admin.home', ['action' => 'Yes'])
+        return redirect()->route('homeBusiness', ['action' => 'Yes'])
                              ->with('success', 'CV đã được cập nhật!');
         } else {
             return response()->json(['message' => 'Apply job not found'], 404);

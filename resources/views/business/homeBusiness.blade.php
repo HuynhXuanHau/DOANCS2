@@ -1,4 +1,4 @@
-@extends('layouts.appBus') <!-- Or your main layout -->
+@extends('layouts.appBusiness') <!-- Or your main layout -->
 
 
 @section('content')
@@ -178,12 +178,12 @@
                         @if (!empty($interviewDate))
                         <td class="text-center">{{ $row->state }}</td>
                             <td class="text-center">
-                              <a href="{{ route('showProfileForAD', ['user_id' => $row->userId]) }}" 
+                              <a href="{{ route('showProfileForBus', ['user_id' => $row->userId]) }}" 
                                  class="btn btn-sm btn-outline-primary">
                                 <i class="fas fa-file-alt me-1"></i>Xem CV
                               </a>
                             </td>
-                            <form action="{{ route('cv.update') }}" method="post">
+                            <form action="{{ route('buscv.update') }}" method="post">
                                 @csrf
                                 <th>
                                 <input type="text" name="cvInterviewDate" class="form-control" placeholder="dd/mm/yy" value="{{ $row->interviewDate }}">
@@ -199,7 +199,7 @@
                             </td>
                           @elseif($state == 'Waiting')
                             <td class="text-center">
-                              <a href="{{ route('showProfileForAD', ['user_id' => $row->userId]) }}" 
+                              <a href="{{ route('showProfileForBus', ['user_id' => $row->userId]) }}" 
                                 class="btn btn-sm btn-outline-primary">
                                 <i class="fas fa-file-alt me-1"></i>Xem CV
                               </a>
@@ -207,6 +207,7 @@
                             <td style="text-align: center;">
                               <div class="btn-group" role="group">
                                 <!-- Form for Approve -->
+                                 
                                 <form action="{{ route('applyJob.approve') }}" method="POST" style="display:inline;">
                                   @csrf
                                   <input type="hidden" name="id" value="{{ $row->id }}">
@@ -228,12 +229,12 @@
                         @elseif ($state == 'Yes')
                         <td >{{ $row->state }}</td>
                             <td class="text-center">
-                              <a href="{{ route('showProfileForAD', ['user_id' => $row->userId]) }}" 
+                              <a href="{{ route('showProfileForBus', ['user_id' => $row->userId]) }}" 
                                  class="btn btn-sm btn-outline-primary">
                                 <i class="fas fa-file-alt me-1"></i>Xem CV
                               </a>
                             </td>
-                            <form action="{{ route('cv.update') }}" method="post">
+                            <form action="{{ route('buscv.update') }}" method="post">
                                 @csrf
                                 <th>
                                 <input type="text" name="cvInterviewDate" class="form-control" placeholder="dd/mm/yy" value="{{ $row->interviewDate }}">
@@ -251,7 +252,7 @@
                           <td class="text-center">{{ $row->state }}</td>
                           <td class="text-center">{{ $row->interviewDate }}</td>
                           <td class="text-center">
-                            <a href="{{ route('showProfileForAD', ['user_id' => $row->userId]) }}" 
+                            <a href="{{ route('showProfileForBus', ['user_id' => $row->userId]) }}" 
                                class="btn btn-sm btn-outline-primary">
                               <i class="fas fa-file-alt me-1"></i> Xem CV
                             </a>
@@ -260,7 +261,7 @@
                           <td >{{ $row->state }}</td>
                           <td class="text-center">{{ $row->interviewDate }}</td>
                           <td class="text-center">
-                            <a href="{{ route('showProfileForAD', ['user_id' => $row->userId]) }}" 
+                            <a href="{{ route('showProfileForBus', ['user_id' => $row->userId]) }}" 
                                class="btn btn-sm btn-outline-primary">
                               <i class="fas fa-file-alt me-1"></i> Xem CV
                             </a>

@@ -13,7 +13,7 @@
                     <img src="{{ asset('images/job_listing_placeholder.png') }}" alt="Job Listing" class="rounded-lg mb-4">
                     <h3 class="text-xl font-bold mb-2">Đăng tin tuyển dụng</h3>
                     <p class="text-gray-400 mb-4">Đăng việc làm của bạn lên trang web của chúng tôi để thu hút ứng viên tiềm năng</p>
-                    <!-- <a href="{{ route('jobs.create') }}" class="bg-blue-500 text-white rounded-lg px-4 py-2 inline-block hover:bg-blue-600">Đăng tin ngay</a> -->
+                    <a href="{{ route('createJobforBusiness') }}" class="bg-blue-500 text-white rounded-lg px-4 py-2 inline-block hover:bg-blue-600">Đăng tin ngay</a>
                 </div>
                 
                 <div class="bg-gray-800 rounded-lg p-6">

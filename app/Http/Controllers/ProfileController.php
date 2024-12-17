@@ -123,6 +123,16 @@ public function showProfileForAD($user_id)
 
     return view('showProfileForAD', compact('profile'));
 }
+public function showProfileForBus($user_id)
+{
+    $profile = \App\Models\UserCv::where('user_id', $user_id)->first();
+
+    if (!$profile) {
+        return redirect()->route('errorPage')->with('error', 'Không tìm thấy người dùng!');
+    }
+
+    return view('showProfileForBus', compact('profile'));
+}
 
 public function showProfileBUSForAD($id)
 {

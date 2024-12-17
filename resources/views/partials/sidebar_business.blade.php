@@ -9,7 +9,7 @@
         </div>
         <div class="card-body">
             <div class="menu-item mb-2">
-                <a href="{{ route('jobs.create') }}" class="text-decoration-none text-dark d-flex align-items-center" id="addJob">
+                <a href="{{ route('createJobforBusiness') }}" class="text-decoration-none text-dark d-flex align-items-center" id="addJob">
                     <i class="fa-solid fa-suitcase me-2"></i> Thêm job
                 </a>
             </div>
