@@ -141,6 +141,7 @@ public function login(Request $request)
                     // Đăng nhập thành công, chuyển hướng đến business.home
                     Session::put('mail', $user->business_name);
                     Session::put('user_id', $user->business_id);
+
                     return redirect()->route('business.home');
 
                 case 'No':
@@ -222,24 +223,46 @@ return view('business.homeBusiness', compact('results'))->with('state', '');
 }
 
 
-public function pendingList()
+public function pendingListt()
 {
     $results = ApplyJob::where('state', 'Waiting')->get();
     return view('business.homeBusiness', compact('results'))->with('state', 'Waiting');
 }
-    
+public function pendingList()
+{
+    $businessName = session('mail'); // Lấy tên công ty từ session
+
+    $results = ApplyJob::where([
+        ['name', '=', $businessName],
+        ['state', '=', 'Waiting']
+    ])
+    ->orderBy('created_at', 'desc') // Sắp xếp giảm dần theo thời gian
+    ->get();
+
+    return view('business.homeBusiness', compact('results'))->with('state', 'Waiting');
+}
+
+
+
 public function approvedList()
 {
-    $results = ApplyJob::where('state', 'Yes')->get();
+    $results = ApplyJob::get()->filter(function ($item) {
+        return $item->state == 'Yes';
+    });
+
     return view('business.homeBusiness', compact('results'))->with('state', 'Yes');
 }
+
 public function interviewList()
 {
-$state = 'Interview';
-$results = ApplyJob::where('state', 'Yes')->get();
+    $state = 'Interview';
+    $results = ApplyJob::get()->filter(function ($item) {
+        return $item->state == 'Yes';
+    });
 
-return view('business.homeBusiness', compact('results', 'state'));
+    return view('business.homeBusiness', compact('results', 'state'));
 }
+
 
 
 public function updateCv(Request $request)

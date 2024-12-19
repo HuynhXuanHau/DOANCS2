@@ -14,9 +14,9 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
-        return view('auth.login_business');
+        return view('auth.login_a');
     }
-
+    
     public function showLoginAdminForm()
     {
     return view('auth.login_admin');

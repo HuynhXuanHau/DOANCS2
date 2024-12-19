@@ -28,11 +28,21 @@
             box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .card img {
+        .card-img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            background-color: #f8f9fa;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
-            height: 150px;
-            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .card-img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         .card-title {
@@ -64,9 +74,11 @@
         <h1 class="text-center text-white mb-5">Bạn muốn đăng nhập với vai trò nào?</h1>
         <div class="row justify-content-center">
             <!-- Card cho Ứng viên -->
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="card text-center">
-                    <img src="{{ asset('images/ungvien.png')}}" alt="Ứng viên">
+                    <div class="card-img-container">
+                        <img src="{{ asset('images/ungvien.png') }}" alt="Ứng viên">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">Ứng viên</h5>
                         <p class="card-text">Khám phá các cơ hội nghề nghiệp và ứng tuyển ngay hôm nay!</p>
@@ -75,9 +87,11 @@
                 </div>
             </div>
             <!-- Card cho Doanh nghiệp -->
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="card text-center">
-                    <img src="{{ asset('images/doanhnghiep.jpg') }}" alt="Doanh nghiệp">
+                    <div class="card-img-container">
+                        <img src="{{ asset('images/doanhnghiep.jpg') }}" alt="Doanh nghiệp">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">Doanh nghiệp</h5>
                         <p class="card-text">Tìm kiếm nhân tài và đăng tin tuyển dụng ngay!</p>

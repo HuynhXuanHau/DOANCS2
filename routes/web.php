@@ -13,6 +13,15 @@ Route::post('/admin/login', [AuthController::class, 'adminLogin'])->name('admin_
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
+Route::get('/login/candidate', function () {
+    return view('auth.login');
+})->name('candidate.login');
+
+Route::get('/login/business', function () {
+    return view('auth.login_business');
+})->name('business.login');
+
+
 // Route::post('/logout',  [AuthController::class, 'logout'])->name('user.logout');
 Route::post('/logout',  [AuthController::class, 'logout'])->name('logout');
 // Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');

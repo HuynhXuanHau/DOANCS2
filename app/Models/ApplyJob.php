@@ -10,4 +10,8 @@ class ApplyJob extends Model
     use HasFactory;
     protected $table = 'apply_job';
     protected $fillable = ['name','position','userId','userName','state','img','language','experience','area','interviewDate','businessNote' ];
+    public function business()
+    {
+        return $this->belongsTo(Business_account::class, 'name', 'business_name');
+    }
 }

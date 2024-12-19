@@ -218,34 +218,34 @@
 <body>
     <div class="signup-container">
         <div class="signup-form">
-            <h1 class="form-title">Create Account</h1>
+            <h1 class="form-title">Tạo tài khoản</h1>
             <form action="{{ route('register') }}" method="post">
                 @csrf
                 <div class="input-group">
-                    <label class="label" for="rg_name">Full Name</label>
-                    <input type="text" id="rg_name" name="rg_name" class="input" placeholder="Enter your full name" required>
+                    <label class="label" for="rg_name">Tên của bạn</label>
+                    <input type="text" id="rg_name" name="rg_name" class="input" placeholder="Nhập tên của bạn" required>
                 </div>
                 <div class="input-group">
-                    <label class="label" for="rg_email">Email Address</label>
-                    <input type="email" id="rg_email" name="rg_email" class="input" placeholder="Enter your email" required>
+                    <label class="label" for="rg_email">Địa chỉ email</label>
+                    <input type="email" id="rg_email" name="rg_email" class="input" placeholder="Hãy nhập email của bạn" required>
                 </div>
                 <div class="input-group">
-                    <label class="label" for="rg_password">Password</label>
+                    <label class="label" for="rg_password">Mật khẩu</label>
                     <input type="password" id="rg_password" name="rg_password" class="input" placeholder="Nhập mật khẩu có ít nhất 6 kí tự" required>
                 </div>
                 <div class="input-group">
-                    <label class="label" for="rg_password_confirmation">Confirm Password</label>
-                    <input type="password" id="rg_password_confirmation" name="rg_password_confirmation" class="input" placeholder="Repeat your password" required>
+                    <label class="label" for="rg_password_confirmation">Nhập lại mật khẩu</label>
+                    <input type="password" id="rg_password_confirmation" name="rg_password_confirmation" class="input" placeholder="Nhập lại mật khẩu" required>
                 </div>
                 <div class="checkbox-group">
                     <input type="checkbox" id="checkAgree" name="checkAgree" class="checkbox" required>
                     <label for="checkAgree">
-                        I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a>
+                        Tôi đồng ý với <a href="#" class="link">Chính sách bảo mật</a> and <a href="#" class="link">Quyền riêng tư</a>
                     </label>
                 </div>
-                <button type="submit" class="btn">Create Account</button>
+                <button type="submit" class="btn">Tạo tài khoản</button>
                 <p class="login-link">
-                    Already have an account? <a href="{{ route('login') }}" class="link">Sign in</a>
+                    Bạn đã có tài khoản? <a href="{{ route('login') }}" class="link">Đăng nhập</a>
                 </p>
             </form>
             @if ($errors->any())
